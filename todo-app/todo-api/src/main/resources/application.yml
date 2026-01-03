@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: todo-api
+  data:
+    mongodb:
+      uri: ${MONGODB_URL:mongodb://localhost:27017/app}
+      database: ${MONGODB_DATABASE:app}
+
+server:
+  port: 8080
+
+cors:
+  allowed-origins: ${CORS_ORIGIN:http://localhost:5173}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
