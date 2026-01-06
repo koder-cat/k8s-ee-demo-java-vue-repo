@@ -76,7 +76,3 @@ Each pull request automatically gets an isolated environment:
 2. App + MongoDB deployed
 3. Preview URL: `todo-app-java-pr-{number}.k8s-ee.genesluna.dev`
 4. PR closed -> Environment destroyed
-
-## License
-
-MIT
