@@ -11,7 +11,7 @@ RUN npm run build
 FROM eclipse-temurin:21-jdk-alpine AS backend-builder
 WORKDIR /app
 COPY todo-api/gradle gradle
-COPY todo-api/gradlew todo-api/build.gradle.kts todo-api/settings.gradle.kts ./
+COPY todo-api/gradlew todo-api/build.gradle.kts todo-api/settings.gradle.kts todo-api/gradle.properties ./
 RUN chmod +x gradlew && ./gradlew dependencies --no-daemon
 COPY todo-api/src ./src
 COPY --from=frontend-builder /app/dist ./src/main/resources/static/
